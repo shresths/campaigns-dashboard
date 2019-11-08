@@ -5,3 +5,9 @@ nav {
 .tabs {
     color: green
 }
+
+img {
+    height: 20px;
+    vertical-align: middle;
+    margin: 5px;
+}
