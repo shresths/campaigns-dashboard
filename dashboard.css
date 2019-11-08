@@ -11,3 +11,7 @@ img {
     vertical-align: middle;
     margin: 5px;
 }
+
+.action_tab {
+    display: inline-block;
+}

@@ -39,6 +39,8 @@ json_data = {
   }
 
   $(document).ready(function(){
+    $('.datepicker').datepicker();
+    
     $('.tabs').tabs();
     console.log("Data", json_data["data"]);
     let data_table_list = [];
@@ -67,9 +69,9 @@ json_data = {
         let campaignHtml = `<p>${data["name"]}</p><p>${data["region"]}</p>`;
         let viewHtml = `<span class="row"><img src="./Page 1/Dashboard/Row/Group 4/Price.png">
                         <p>View Pricing</p></span>`;
-        let actionsHtml = `<span class="row"><div class="col s4"><img src="./Page 1/Dashboard/Row/Group 3/file.png"><p>CSV</p></div>
-                                <div class="col s4"><img src="./Page 1/Dashboard/Row/Group 2/statistics-report.png"><p>Report</p></div>
-                                <div class="col s4"><img src="./Page 1/Dashboard/Row/Group 4/Price.png"><p>Schedule Again</p></span></div>`
+        let actionsHtml = `<span class="row"><div class="col s4"><img src="./Page 1/Dashboard/Row/Group 3/file.png"><p class="action_tab">CSV</p></div>
+                                <div class="col s4"><img src="./Page 1/Dashboard/Row/Group 2/statistics-report.png"><p class="action_tab">Report</p></div>
+                                <div class="col s4"><img src="./Page 1/Dashboard/Row/Group 4/Price.png"><p class="action_tab schedule_button">Schedule Again</p><input type="text" class="datepicker hide"></div>`
         let currentDateHtml = `<p>${formatDate(currentDate)}</p><p>${day_status}</p>`
         let new_row_html = `<tr>
             <td>${currentDateHtml}</td>
@@ -96,64 +98,7 @@ json_data = {
 
     }
 
-    console.log("data table list", data_table_list)
-
-    // function pushInDataTable (dataTableData) {
-
-    //     dataTableData = dataTableData.sort(custom_sort).reverse();
-
-    //     var data = {
-    //         data: dataTableData,
-    //         columns: columns
-    //     };
-
-    //     if(dataTableData.length > 0) {
-    //         $('#search_bar').removeClass("hide");
-    //         $('.refresh-btn').removeClass("hide"); }
-
-    //    // console.log("data : ", data);
-    //     //console.log("$('#myTable') :", $('#myTable'));
-    //     var tableObj = $('#upcoming_camp').find('table').find('thead');
-    //     var options = {
-    //         data: data.data,
-    //         columns: data.columns,
-    //         columnsHtml: function(value, key) {
-    //             return value;
-    //         },
-    //         pagination: PAGINATION_COUNT,
-    //         showPaginationLabel: true,
-    //         prevText: 'Prev',
-    //         nextText: 'Next',
-    //         searchField: $('#search'),
-    //         responsive: [
-
-    //         ]
-    //     };
-
-    //     if(tableObj.length > 0) {
-    //         //console.log("yes", table);
-    //         var originalData = table.config.data;
-    //         for(var i in dataTableData) {
-    //             originalData.push(dataTableData[i]);
-    //         }
-    //         table.isUpdating = true;
-    //         originalData = originalData.sort(custom_sort).reverse();
-    //         table.config.data = originalData;
-    //         table.update();
-    //     } else {
-    //         //console.log("no");
-    //         table = $('#upcoming_camp').tableSortable(options);
-    //     }
-    // }
-
-    // let data = json_data["data"];
-    // const pastDates = data.filter(x => Date.parse(x.createdOn) < new Date());
-
-    // const futureDates = data.filter(x => Date.parse(x.createdOn) > new Date());
-
-    // console.log("Past dates", JSON.stringify(pastDates, null, 4));
-
-    // console.log("Future dates", JSON.stringify(futureDates, null, 4));
+    console.log("data table list", data_table_list);
 
 
     function formatDate(date) {
@@ -166,10 +111,15 @@ json_data = {
         hours = hours ? hours : 12; // the hour '0' should be '12'
         minutes = minutes < 10 ? '0'+minutes : minutes;
         var strTime = hours + ':' + minutes + ' ' + ampm;
-        return date.getDate() + " " + monthString[date.getMonth()]  + " " + year + ", " + strTime;
+        return date.getDate() + " " + monthString[date.getMonth()]  + " " + year;
     }
 
     function custom_sort(a, b) {
         return new Date(a.date).getTime() - new Date(b.date).getTime();
     }
+
+    $(".schedule_button").click(function() {
+        $(this).
+        console.log("clicked")
+    })
   });
