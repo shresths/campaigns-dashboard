@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!--<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css'>-->
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'><link rel="stylesheet" href="./dashboard.css">
+
+</head>
+<body>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Logo</a>
+            </div>
+        </nav>
+    </div>
+    <div class="valign-wrapper">
+        <h4>Manage Campaigns</h4>
+    </div>
+    <div class="row valign-wrapper">
+        <div class="col s9">
+            <ul class="tabs">
+            <li class="tab col s3"><a href="#upcoming_camp">Upcoming Campaign</a></li>
+            <li class="tab col s3"><a class="active" href="#live_camp">Live Campaign</a></li>
+            <li class="tab col s3"><a href="#past_camp">Past Campaign</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div id="upcoming_camp" class="col s12">
+                <table id="upcoming_datatable">
+                <thead>
+                    <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>View</th>
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                </table>
+        </div>
+        <div id="live_camp" class="col s12">
+                <table id="live_datatable">
+                <thead>
+                    <tr>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>View</th>
+                    <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+                </table>
+        </div>
+        <div id="past_camp" class="col s12">
+            <table id="past_datatable">
+                    <thead>
+                        <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>View</th>
+                        <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                    </table>
+        </div>
+    </div>
+    </div>
+</body>
+<!-- partial -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src='https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'></script>
+<!--<script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js'></script>-->
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script  src="./scripts.js"></script>
+<script  src="./dataTable.js"></script>
+
+</body>
+</html>
